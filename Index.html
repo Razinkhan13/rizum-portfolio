@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rizum Khan | Business Development Consultant & Applied AI Strategist</title>
+  <meta name="description" content="Portfolio of Rizum Khan — Founder, Applied AI Systems Builder, and Business Development Specialist bridging technical AI execution with commercial growth strategy." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@1,500;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#05070D',
+            surface: {
+              DEFAULT: '#0A0E1A',
+              card: '#0F1527',
+              border: 'rgba(255, 255, 255, 0.08)'
+            },
+            electric: {
+              cyan: '#00F0FF',
+              indigo: '#6366F1',
+              violet: '#8B5CF6',
+              emerald: '#10B981'
+            }
+          },
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'glow-drift': 'drift 12s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            drift: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '100%': { transform: 'translate(30px, 20px) scale(1.08)' }
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Chromatic Glass Utilities */
+    .glass-card {
+      background: rgba(15, 21, 39, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card:hover {
+      border-color: rgba(99, 102, 241, 0.35);
+      box-shadow: 0 12px 36px -10px rgba(99, 102, 241, 0.15);
+      transform: translateY(-2px);
+    }
+    .mesh-gradient-bg {
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(0, 240, 255, 0.09) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(139, 92, 246, 0.08) 0px, transparent 50%);
+    }
+    .selection-highlight::selection {
+      background-color: #6366F1;
+      color: #FFFFFF;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #05070D;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+  </style>
+</head>
+
+<body class="bg-obsidian text-slate-200 selection-highlight font-sans antialiased relative overflow-x-hidden min-h-screen">
+
+  <!-- Ambient Light Orbs -->
+  <div class="fixed top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-electric-indigo/10 blur-[130px] pointer-events-none -z-10 animate-glow-drift"></div>
+  <div class="fixed top-[40%] right-[-10%] w-[600px] h-[600px] rounded-full bg-electric-cyan/10 blur-[140px] pointer-events-none -z-10 animate-pulse-slow"></div>
+  <div class="fixed bottom-[-10%] left-[20%] w-[550px] h-[550px] rounded-full bg-electric-violet/10 blur-[150px] pointer-events-none -z-10"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 bg-surface-card border border-electric-cyan/30 text-white px-5 py-3.5 rounded-xl shadow-2xl backdrop-blur-xl">
+    <i data-lucide="check-circle" class="w-5 h-5 text-electric-cyan"></i>
+    <span id="toast-message" class="text-sm font-medium">Copied to clipboard!</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-40 px-4 sm:px-8 py-4 backdrop-blur-md bg-obsidian/70 border-b border-white/5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <!-- Monogram Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-electric-indigo to-electric-cyan p-[1px] shadow-lg shadow-electric-indigo/20">
+          <div class="w-full h-full bg-obsidian rounded-[11px] flex items-center justify-center font-syne font-bold text-white tracking-wider group-hover:bg-transparent transition-all duration-300">
+            RK
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-syne font-bold text-sm tracking-wide text-white flex items-center gap-1.5">
+            RIZUM KHAN
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-electric-emerald animate-ping"></span>
+          </span>
+          <span class="font-mono text-[10px] text-slate-400 tracking-wider">BD & AI STRATEGIST</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
+        <a href="#about" class="hover:text-electric-cyan transition-colors">Philosophy</a>
+        <a href="#capabilities" class="hover:text-electric-cyan transition-colors">Capabilities</a>
+        <a href="#projects" class="hover:text-electric-cyan transition-colors">Case Studies</a>
+        <a href="#strategy-simulator" class="hover:text-electric-cyan transition-colors">Interactive Playbook</a>
+        <a href="#credentials" class="hover:text-electric-cyan transition-colors">Credentials</a>
+      </nav>
+
+      <!-- CTA & Status -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="mailto:admin@armyibaspecialist.info" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-mono bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 transition-all">
+          <i data-lucide="mail" class="w-3.5 h-3.5 text-electric-cyan"></i>
+          admin@armyibaspecialist.info
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-semibold bg-gradient-to-r from-electric-indigo to-electric-violet hover:from-electric-violet hover:to-electric-indigo text-white shadow-lg shadow-electric-indigo/25 transition-all">
+          Initiate Dialogue
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-toggle" class="md:hidden p-2 text-slate-300 hover:text-white" aria-label="Toggle Navigation Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-4 pb-6 mt-3 border-t border-white/5 flex-col gap-4 bg-surface-card rounded-2xl">
+      <a href="#about" class="mobile-nav-link text-slate-300 text-sm font-medium py-1">Philosophy</a>
+      <a href="#capabilities" class="mobile-nav-link text-slate-300 text-sm font-medium py-1">Capabilities</a>
+      <a href="#projects" class="mobile-nav-link text-slate-300 text-sm font-medium py-1">Case Studies</a>
+      <a href="#strategy-simulator" class="mobile-nav-link text-slate-300 text-sm font-medium py-1">Playbook</a>
+      <a href="#credentials" class="mobile-nav-link text-slate-300 text-sm font-medium py-1">Credentials</a>
+      <a href="#contact" class="mobile-nav-link text-electric-cyan text-sm font-semibold pt-2 border-t border-white/10 flex items-center justify-between">
+        Book Strategy Consultation <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+  </header>
+
+  <main class="pt-24 md:pt-32">
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 py-12 md:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-8 flex flex-col items-start space-y-6">
+          
+          <!-- Availability Badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-electric-emerald/10 border border-electric-emerald/20 text-electric-emerald text-xs font-mono tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-electric-emerald animate-pulse"></span>
+            AVAILABLE FOR GLOBAL REMOTE CONSULTING & BD SPECIALIST ROLES
+          </div>
+
+          <!-- Master Headline -->
+          <h1 class="text-4xl sm:text-6xl xl:text-7xl font-syne font-extrabold text-white tracking-tight leading-[1.08]">
+            Architecting <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan via-electric-indigo to-electric-violet">Commercial Growth</span> via <em class="font-serif italic font-medium text-slate-100">Applied AI</em> Systems.
+          </h1>
+
+          <!-- Value Statement -->
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed font-light">
+            I bridge the gap between boardroom P&L objectives and multi-agent AI execution. As a venture founder and BBA researcher, I design dynamic pricing models, automate high-friction operational pipelines, and architect revenue-generating go-to-market engines.
+          </p>
+
+          <!-- Action CTA Group -->
+          <div class="flex flex-wrap items-center gap-4 pt-2 w-full sm:w-auto">
+            <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-3.5 rounded-xl font-semibold text-sm bg-gradient-to-r from-electric-indigo to-electric-cyan text-white shadow-xl shadow-electric-indigo/20 hover:opacity-95 transition-all">
+              View Verified Case Studies
+              <i data-lucide="arrow-down" class="w-4 h-4"></i>
+            </a>
+            <button onclick="copyToClipboard('admin@armyibaspecialist.info', 'Business Email copied to clipboard!')" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-mono text-xs font-medium bg-surface-card hover:bg-white/10 text-slate-200 border border-white/10 transition-all">
+              <i data-lucide="copy" class="w-4 h-4 text-electric-cyan"></i>
+              Copy Direct Email
+            </button>
+          </div>
+
+          <!-- Verified Meta Proof Points -->
+          <div class="pt-6 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 w-full font-mono text-xs text-slate-400">
+            <div>
+              <div class="text-white font-bold text-lg font-syne">Bootstrapped</div>
+              <div class="text-[11px] text-slate-400">Founder & CEO, AIS</div>
+            </div>
+            <div>
+              <div class="text-electric-cyan font-bold text-lg font-syne">1st in Sylhet</div>
+              <div class="text-[11px] text-slate-400">AWS Student Builder Lead</div>
+            </div>
+            <div>
+              <div class="text-electric-violet font-bold text-lg font-syne">National Win</div>
+              <div class="text-[11px] text-slate-400">AXIOM 2026 AI Research</div>
+            </div>
+            <div>
+              <div class="text-electric-emerald font-bold text-lg font-syne">YC S26</div>
+              <div class="text-[11px] text-slate-400">Founder Applicant</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Founder Visual Card -->
+        <div class="lg:col-span-4">
+          <div class="relative group">
+            <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-electric-indigo via-electric-cyan to-electric-violet opacity-30 group-hover:opacity-70 blur transition duration-500"></div>
+            <div class="relative glass-card rounded-2xl p-6 overflow-hidden">
+              <div class="flex items-center justify-between mb-4 border-b border-white/10 pb-3">
+                <span class="font-mono text-[11px] text-electric-cyan tracking-wider">[PERSPECTIVE: OPERATOR + BUILDER]</span>
+                <span class="font-mono text-[11px] text-slate-400">Sylhet, BD (UTC+6)</span>
+              </div>
+
+              <!-- Terminal style spec sheet -->
+              <div class="space-y-3 font-mono text-xs">
+                <div class="p-2.5 rounded-lg bg-black/40 border border-white/5">
+                  <span class="text-slate-500">// Academic Rigor</span>
+                  <p class="text-slate-200 mt-1 font-sans text-xs">BBA 3rd Year (CGPA 3.35/4.00)<br/><span class="text-slate-400">Army IBA • Univ of Dhaka Affiliate</span></p>
+                </div>
+                <div class="p-2.5 rounded-lg bg-black/40 border border-white/5">
+                  <span class="text-slate-500">// Core Stack</span>
+                  <p class="text-electric-cyan mt-1 text-xs">n8n • Claude / Gemini API • Next.js 15 • Python • Supabase</p>
+                </div>
+                <div class="p-2.5 rounded-lg bg-black/40 border border-white/5">
+                  <span class="text-slate-500">// Commercial Specialism</span>
+                  <p class="text-slate-200 mt-1 font-sans text-xs">B2B Strategy, AI Agent Workflows, Algorithmic Pricing Floors, GTM Growth</p>
+                </div>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span class="text-xs text-slate-300 font-sans">Remote Ready: US / EU / APAC</span>
+                </div>
+                <a href="https://www.linkedin.com/in/rizumkhan" target="_blank" rel="noopener noreferrer" class="text-xs text-electric-cyan hover:underline flex items-center gap-1 font-mono">
+                  LinkedIn <i data-lucide="external-link" class="w-3 h-3"></i>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strategic Philosophy (Why a Technical BD Consultant?) -->
+    <section id="about" class="max-w-7xl mx-auto px-4 sm:px-8 py-16 border-t border-white/5">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="font-mono text-xs text-electric-indigo tracking-widest uppercase">The Dual-Domain Advantage</span>
+        <h2 class="text-3xl sm:text-4xl font-syne font-bold text-white mt-2">
+          Most BD Consultants don't know how the code works. <br class="hidden sm:inline"/>
+          <span class="text-slate-400 font-serif italic font-normal">Most Engineers don't understand unit economics.</span>
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base mt-4 font-light leading-relaxed">
+          I operate precisely at the intersection of business strategy and technical systems engineering. When leading business development, I don't just draft pitch decks—I build working technical MVPs, simulate margin constraints, and deploy autonomous agents that streamline the sales funnel.
+        </p>
+      </div>
+
+      <!-- 3 Pillars Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-electric-indigo/10 border border-electric-indigo/20 flex items-center justify-center text-electric-indigo mb-5">
+              <i data-lucide="trending-up" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-syne font-bold text-lg text-white mb-2">Revenue & Margin Modeling</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Designed algorithmic dynamic-pricing engines guaranteeing strict 28% gross-margin floors in re-commerce platforms while factoring in logistics and dispute reserves.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 font-mono text-[11px] text-electric-indigo">
+            [P&L OPTIMIZATION • UNIT ECONOMICS]
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-electric-cyan/10 border border-electric-cyan/20 flex items-center justify-center text-electric-cyan mb-5">
+              <i data-lucide="bot" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-syne font-bold text-lg text-white mb-2">Applied AI Agent Workflows</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Built multi-agent automation chains (n8n, Flowise, Claude, Groq) replacing high-friction manual operational tasks for agribusiness ventures and apparel brands.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 font-mono text-[11px] text-electric-cyan">
+            [AGENTIC PIPELINES • AUTONOMOUS OPS]
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-electric-violet/10 border border-electric-violet/20 flex items-center justify-center text-electric-violet mb-5">
+              <i data-lucide="globe-2" class="w-6 h-6"></i>
+            </div>
+            <h3 class="font-syne font-bold text-lg text-white mb-2">Ecosystem & Partnership Growth</h3>
+            <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">
+              Recognized student leader across AWS, Google Developer Programme, Microsoft Azure, and UNICEF Youth AI. Proven ability to galvanize technical communities.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/5 font-mono text-[11px] text-electric-violet">
+            [ECOSYSTEMS • TECH ALLIANCES]
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core BD & AI Capabilities -->
+    <section id="capabilities" class="max-w-7xl mx-auto px-4 sm:px-8 py-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="font-mono text-xs text-electric-cyan tracking-widest uppercase">Consulting Capabilities</span>
+          <h2 class="text-3xl sm:text-4xl font-syne font-bold text-white mt-1">Specialized BD Tooling & Strategy</h2>
+        </div>
+        <p class="text-slate-400 text-sm max-w-md mt-3 md:mt-0">
+          Strategic frameworks delivered with production-grade engineering, prompt optimization, and analytical certainty.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="font-mono text-xs text-slate-500 mb-2">01 / STRATEGY</div>
+          <h3 class="font-syne font-semibold text-white text-base mb-2">GTM & Commercial Expansion</h3>
+          <p class="text-slate-400 text-xs leading-relaxed mb-4">
+            B2B market-mapping, competitive positioning, customer discovery interviews, and partnership deal structuring.
+          </p>
+          <ul class="text-[11px] font-mono text-slate-300 space-y-1.5">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-electric-cyan"></i> Stakeholder Mapping</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-electric-cyan"></i> B2B Outreach Automation</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-electric-cyan"></i> Pitch Deck & Proposal Eng.</li>
+          </ul>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="font-mono text-xs text-slate-500 mb-2">02 / AUTOMATION</div>
+          <h3 class="font-syne font-semibold text-white text-base mb-2">AI Agent Pipeline Build</h3>
+          <p class="text-slate-400 text-xs leading-relaxed mb-4">
+            Designing automated agents for lead qualification, inbound processing, and autonomous customer nurture flows.
+          </p>
+          <ul class="text-[11px] font-mono text-slate-300 space-y-1.5">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-electric-cyan"></i> n8n & Flowise Workflows</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-electric-cyan"></i> Multi-LLM Routing (Claude/Groq)</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-electric-cyan"></i> Custom Webhook Integrations</li>
+          </ul>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="font-mono text-xs text-slate-500 mb-2">03 / PRODUCT BD</div>
+          <h3 class="font-syne font-semibold text-white text-base mb-2">Marketplace & Trust Design</h3>
+          <p class="text-slate-400 text-xs leading-relaxed mb-4">
+            Architecting vendor lifecycle management, escrow/verification models, and automated compliance frameworks.
+          </p>
+          <ul class="text-[11px] font-mono text-slate-300 space-y-1.5">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-electric-cyan"></i> Seller Verification Models</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-electric-cyan"></i> Logistics API Orchestration</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-electric-cyan"></i> Dynamic Margin Protection</li>
+          </ul>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="font-mono text-xs text-slate-500 mb-2">04 / RESEARCH</div>
+          <h3 class="font-syne font-semibold text-white text-base mb-2">Economic & Tech Feasibility</h3>
+          <p class="text-slate-400 text-xs leading-relaxed mb-4">
+            Rigorous economic research evaluating total addressable markets and formalization pipelines for micro-enterprises.
+          </p>
+          <ul class="text-[11px] font-mono text-slate-300 space-y-1.5">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-electric-cyan"></i> Macro & Micro Market Audits</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-electric-cyan"></i> Empirical Prototype Testing</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3 h-3 text-electric-cyan"></i> Academic-Grade Synthesis</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Case Studies / Projects (Filterable) -->
+    <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-8 py-16 border-t border-white/5">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+        <div>
+          <span class="font-mono text-xs text-electric-violet tracking-widest uppercase">Verified Portfolio</span>
+          <h2 class="text-3xl sm:text-4xl font-syne font-bold text-white mt-1">Featured Case Studies & Systems</h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-2 mt-4 md:mt-0" id="filter-tabs">
+          <button data-filter="all" class="filter-btn active px-3.5 py-1.5 rounded-lg text-xs font-mono bg-electric-indigo text-white border border-electric-indigo transition-all">All Projects</button>
+          <button data-filter="ai-automation" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-mono bg-surface-card text-slate-300 hover:bg-white/5 border border-white/10 transition-all">AI & Automation</button>
+          <button data-filter="marketplaces" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-mono bg-surface-card text-slate-300 hover:bg-white/5 border border-white/10 transition-all">Platforms & BD</button>
+          <button data-filter="research" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs font-mono bg-surface-card text-slate-300 hover:bg-white/5 border border-white/10 transition-all">Research & Ventures</button>
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-container">
+        
+        <!-- Project 1: AXIOM 2026 Winner -->
+        <div class="project-item glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="research">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-amber-400/10 border border-amber-400/20 text-amber-300 font-mono text-[10px] font-semibold">
+                ★ NATIONAL WINNER
+              </span>
+              <span class="font-mono text-slate-400 text-xs">AXIOM 2026</span>
+            </div>
+            <h3 class="text-xl font-syne font-bold text-white mb-2">AI-Driven Micro-Enterprise Formalization</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4">
+              Authored winning research and built a companion interactive React web app analyzing how automated AI compliance and accounting tools lower the barrier of entry for Bangladesh's micro-enterprise sector.
+            </p>
+            <div class="space-y-1.5 mb-4 font-mono text-[11px] text-slate-400">
+              <div class="flex items-center gap-1.5 text-slate-300">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-electric-cyan"></i>
+                Evaluated by national academic panel
+              </div>
+              <div class="flex items-center gap-1.5 text-slate-300">
+                <i data-lucide="code" class="w-3.5 h-3.5 text-electric-indigo"></i>
+                React interactive modeling environment
+              </div>
+            </div>
+          </div>
+          <div class="px-6 py-3.5 bg-black/40 border-t border-white/5 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">Formal Research Paper</span>
+            <span class="text-amber-400 flex items-center gap-1">1st Place Award <i data-lucide="award" class="w-3.5 h-3.5"></i></span>
+          </div>
+        </div>
+
+        <!-- Project 2: GharMool -->
+        <div class="project-item glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="marketplaces">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-electric-cyan/10 border border-electric-cyan/20 text-electric-cyan font-mono text-[10px] font-semibold">
+                RE-COMMERCE PLATFORM
+              </span>
+              <span class="font-mono text-slate-400 text-xs">Full-Stack BD</span>
+            </div>
+            <h3 class="text-xl font-syne font-bold text-white mb-2">GharMool (ঘরমূল)</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4">
+              C2B2C certified appliance marketplace. Architected "Iron Gateway" trust verification (25-point BTEB certification protocol) and dynamic pricing algorithm enforcing a non-negotiable 28% gross margin floor.
+            </p>
+            <div class="space-y-1.5 mb-4 font-mono text-[11px] text-slate-400">
+              <div class="flex items-center gap-1.5 text-slate-300">
+                <i data-lucide="cpu" class="w-3.5 h-3.5 text-electric-cyan"></i>
+                Next.js 15 • Supabase • Python Backend
+              </div>
+              <div class="flex items-center gap-1.5 text-slate-300">
+                <i data-lucide="truck" class="w-3.5 h-3.5 text-electric-indigo"></i>
+                Lalamove 3PL API + Bangla Localization
+              </div>
+            </div>
+          </div>
+          <div class="px-6 py-3.5 bg-black/40 border-t border-white/5 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">Iron Gateway Trust Model</span>
+            <span class="text-electric-cyan flex items-center gap-1">28% Margin Floor <i data-lucide="lock" class="w-3.5 h-3.5"></i></span>
+          </div>
+        </div>
+
+        <!-- Project 3: AIS Enterprise Agent Suite -->
+        <div class="project-item glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="ai-automation">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-electric-indigo/10 border border-electric-indigo/20 text-electric-indigo font-mono text-[10px] font-semibold">
+                ENTERPRISE AUTOMATION
+              </span>
+              <span class="font-mono text-slate-400 text-xs">Production n8n</span>
+            </div>
+            <h3 class="text-xl font-syne font-bold text-white mb-2">AIS Automation Suite</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4">
+              Engineered end-to-end multi-agent operations for commercial clients in agribusiness and retail apparel. Automates sourcing requests, inventory alerts, multi-channel customer inquiries, and lead qualification.
+            </p>
+            <div class="space-y-1.5 mb-4 font-mono text-[11px] text-slate-400">
+              <div class="flex items-center gap-1.5 text-slate-300">
+                <i data-lucide="workflow" class="w-3.5 h-3.5 text-electric-indigo"></i>
+                Custom n8n agent chains & webhooks
+              </div>
+              <div class="flex items-center gap-1.5 text-slate-300">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-electric-cyan"></i>
+                LLM routing & intelligent triage
+              </div>
+            </div>
+          </div>
+          <div class="px-6 py-3.5 bg-black/40 border-t border-white/5 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">Live Client Deployments</span>
+            <span class="text-electric-emerald flex items-center gap-1">Zero Ops Bottlenecks <i data-lucide="check" class="w-3.5 h-3.5"></i></span>
+          </div>
+        </div>
+
+        <!-- Project 4: AIS Prompt Master -->
+        <div class="project-item glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="ai-automation">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-electric-violet/10 border border-electric-violet/20 text-electric-violet font-mono text-[10px] font-semibold">
+                DEVELOPER TOOLING
+              </span>
+              <span class="font-mono text-slate-400 text-xs">Benchmarking</span>
+            </div>
+            <h3 class="text-xl font-syne font-bold text-white mb-2">AIS Prompt Master</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4">
+              Multi-model comparison playground benchmarking latency, cost-per-token, and output fidelity simultaneously across Claude 3.5, Gemini 1.5/2.0, and Groq ultra-low-latency APIs.
+            </p>
+            <div class="space-y-1.5 mb-4 font-mono text-[11px] text-slate-400">
+              <div class="flex items-center gap-1.5 text-slate-300">
+                <i data-lucide="zap" class="w-3.5 h-3.5 text-electric-cyan"></i>
+                Live Token & Cost Comparator
+              </div>
+              <div class="flex items-center gap-1.5 text-slate-300">
+                <i data-lucide="layers" class="w-3.5 h-3.5 text-electric-violet"></i>
+                Systematic Strategy Tuning
+              </div>
+            </div>
+          </div>
+          <div class="px-6 py-3.5 bg-black/40 border-t border-white/5 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">Model Evaluation</span>
+            <span class="text-slate-300">API Benchmarking Engine</span>
+          </div>
+        </div>
+
+        <!-- Project 5: EMPATHIQ -->
+        <div class="project-item glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="research">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-pink-500/10 border border-pink-500/20 text-pink-400 font-mono text-[10px] font-semibold">
+                AI ETHICS & UX
+              </span>
+              <span class="font-mono text-slate-400 text-xs">Prototype</span>
+            </div>
+            <h3 class="text-xl font-syne font-bold text-white mb-2">EMPATHIQ Middleware</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4">
+              A middleware layer prototype designed to dynamically calibrate the emotional resonance, tone, and empathy markers of LLM outputs for high-trust customer success and sensitive advisory workflows.
+            </p>
+            <div class="space-y-1.5 mb-4 font-mono text-[11px] text-slate-400">
+              <div class="flex items-center gap-1.5 text-slate-300">
+                <i data-lucide="heart-handshake" class="w-3.5 h-3.5 text-pink-400"></i>
+                Human-Centered Generative AI
+              </div>
+              <div class="flex items-center gap-1.5 text-slate-300">
+                <i data-lucide="sliders" class="w-3.5 h-3.5 text-electric-cyan"></i>
+                Tone Calibration Layer
+              </div>
+            </div>
+          </div>
+          <div class="px-6 py-3.5 bg-black/40 border-t border-white/5 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">Research & Architecture</span>
+            <span class="text-pink-400 font-mono">Trustworthiness Engine</span>
+          </div>
+        </div>
+
+        <!-- Project 6: ShikshaBridge -->
+        <div class="project-item glass-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="marketplaces">
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 rounded bg-electric-cyan/10 border border-electric-cyan/20 text-electric-cyan font-mono text-[10px] font-semibold">
+                EDTECH & ADVISORY
+              </span>
+              <span class="font-mono text-slate-400 text-xs">Venture Platform</span>
+            </div>
+            <h3 class="text-xl font-syne font-bold text-white mb-2">ShikshaBridge</h3>
+            <p class="text-slate-300 text-xs leading-relaxed mb-4">
+              Cross-border higher education advisory platform. Implemented secure multi-tenant Supabase authentication with strict Row-Level Security (RLS) policies and automated student profile assessment funnels.
+            </p>
+            <div class="space-y-1.5 mb-4 font-mono text-[11px] text-slate-400">
+              <div class="flex items-center gap-1.5 text-slate-300">
+                <i data-lucide="lock" class="w-3.5 h-3.5 text-electric-cyan"></i>
+                Next.js + Supabase RLS Architecture
+              </div>
+              <div class="flex items-center gap-1.5 text-slate-300">
+                <i data-lucide="users" class="w-3.5 h-3.5 text-electric-indigo"></i>
+                Scalable Inbound Advisory Pipeline
+              </div>
+            </div>
+          </div>
+          <div class="px-6 py-3.5 bg-black/40 border-t border-white/5 flex items-center justify-between text-xs font-mono">
+            <span class="text-slate-400">Production Platform</span>
+            <span class="text-electric-cyan font-mono">End-to-End RLS</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Interactive BD Tactical Playbook Simulator -->
+    <section id="strategy-simulator" class="max-w-7xl mx-auto px-4 sm:px-8 py-16 border-t border-white/5">
+      <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-80 h-80 bg-electric-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-3xl mb-8">
+          <span class="font-mono text-xs text-electric-cyan tracking-widest uppercase">Interactive Consulting Matrix</span>
+          <h2 class="text-2xl sm:text-3xl font-syne font-bold text-white mt-1">Select Your Enterprise Bottleneck</h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-2">
+            Simulate how I deploy business development frameworks and applied AI systems to unblock operational revenue barriers.
+          </p>
+        </div>
+
+        <!-- Simulator Controls -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8" id="playbook-tabs">
+          <button onclick="selectPlaybook(0)" class="playbook-tab-btn active p-4 rounded-xl text-left bg-electric-indigo/20 border border-electric-indigo text-white font-medium text-xs sm:text-sm transition-all flex items-center justify-between">
+            <span>High Manual Ops & Churn</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-electric-cyan"></i>
+          </button>
+          <button onclick="selectPlaybook(1)" class="playbook-tab-btn p-4 rounded-xl text-left bg-black/40 border border-white/10 text-slate-300 hover:text-white font-medium text-xs sm:text-sm transition-all flex items-center justify-between">
+            <span>Sub-Optimal Margin Floors</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-electric-cyan"></i>
+          </button>
+          <button onclick="selectPlaybook(2)" class="playbook-tab-btn p-4 rounded-xl text-left bg-black/40 border border-white/10 text-slate-300 hover:text-white font-medium text-xs sm:text-sm transition-all flex items-center justify-between">
+            <span>Stagnant B2B Lead Conversion</span>
+            <i data-lucide="chevron-right" class="w-4 h-4 text-electric-cyan"></i>
+          </button>
+        </div>
+
+        <!-- Dynamic Output Display -->
+        <div id="playbook-output" class="p-6 rounded-2xl bg-black/50 border border-white/10 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Content populated via JavaScript -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Leadership, Ambassadorships & Credentials -->
+    <section id="credentials" class="max-w-7xl mx-auto px-4 sm:px-8 py-16 border-t border-white/5">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="font-mono text-xs text-electric-emerald tracking-widest uppercase">Global Validation</span>
+        <h2 class="text-3xl font-syne font-bold text-white mt-1">Ecosystem Leadership & Accreditations</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-2">
+          Recognized and vetted across premier cloud providers, developer programs, and international youth AI networks.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 font-mono text-xs">
+        
+        <div class="glass-card p-4 rounded-xl text-center flex flex-col items-center justify-center space-y-2 group hover:border-amber-400/40">
+          <div class="w-10 h-10 rounded-full bg-amber-400/10 flex items-center justify-center text-amber-400">
+            <i data-lucide="cloud" class="w-5 h-5"></i>
+          </div>
+          <span class="text-white font-bold text-[11px] pt-1">AWS Student Builder</span>
+          <span class="text-slate-500 text-[10px]">Group Leader (1st in Sylhet)</span>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl text-center flex flex-col items-center justify-center space-y-2 group hover:border-blue-400/40">
+          <div class="w-10 h-10 rounded-full bg-blue-400/10 flex items-center justify-center text-blue-400">
+            <i data-lucide="terminal" class="w-5 h-5"></i>
+          </div>
+          <span class="text-white font-bold text-[11px] pt-1">Google Developer</span>
+          <span class="text-slate-500 text-[10px]">Programme Ambassador</span>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl text-center flex flex-col items-center justify-center space-y-2 group hover:border-sky-400/40">
+          <div class="w-10 h-10 rounded-full bg-sky-400/10 flex items-center justify-center text-sky-400">
+            <i data-lucide="layers" class="w-5 h-5"></i>
+          </div>
+          <span class="text-white font-bold text-[11px] pt-1">Microsoft Azure</span>
+          <span class="text-slate-500 text-[10px]">Ambassador</span>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl text-center flex flex-col items-center justify-center space-y-2 group hover:border-green-400/40">
+          <div class="w-10 h-10 rounded-full bg-green-400/10 flex items-center justify-center text-green-400">
+            <i data-lucide="cpu" class="w-5 h-5"></i>
+          </div>
+          <span class="text-white font-bold text-[11px] pt-1">NVIDIA Developer</span>
+          <span class="text-slate-500 text-[10px]">Programme Member</span>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl text-center flex flex-col items-center justify-center space-y-2 group hover:border-cyan-400/40">
+          <div class="w-10 h-10 rounded-full bg-cyan-400/10 flex items-center justify-center text-cyan-400">
+            <i data-lucide="globe" class="w-5 h-5"></i>
+          </div>
+          <span class="text-white font-bold text-[11px] pt-1">UNICEF Youth AI</span>
+          <span class="text-slate-500 text-[10px]">Network Member</span>
+        </div>
+
+        <div class="glass-card p-4 rounded-xl text-center flex flex-col items-center justify-center space-y-2 group hover:border-orange-400/40">
+          <div class="w-10 h-10 rounded-full bg-orange-400/10 flex items-center justify-center text-orange-400">
+            <i data-lucide="rocket" class="w-5 h-5"></i>
+          </div>
+          <span class="text-white font-bold text-[11px] pt-1">Y Combinator</span>
+          <span class="text-slate-500 text-[10px]">S26 Founder Applicant</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Conversion & Direct Contact Card -->
+    <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-8 py-20 border-t border-white/5">
+      <div class="glass-card rounded-3xl p-8 sm:p-14 text-center relative overflow-hidden border border-electric-indigo/30 shadow-2xl">
+        <div class="max-w-2xl mx-auto space-y-6">
+          
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 font-mono text-xs text-electric-cyan">
+            <span class="w-2 h-2 rounded-full bg-electric-cyan"></span>
+            GLOBAL AVAILABILITY: IMMEDIATE
+          </div>
+
+          <h2 class="text-3xl sm:text-5xl font-syne font-extrabold text-white tracking-tight">
+            Ready to Accelerate Your <br class="hidden sm:inline" />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan via-electric-indigo to-electric-violet">
+              BD Pipeline with AI?
+            </span>
+          </h2>
+
+          <p class="text-slate-300 text-sm sm:text-base font-light">
+            Whether you need a dedicated remote Business Development Specialist, an AI automation consultant, or a technical growth partner—let’s arrange an introductory call.
+          </p>
+
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="mailto:admin@armyibaspecialist.info" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-semibold text-sm bg-white text-obsidian hover:bg-slate-200 transition-all shadow-xl font-syne">
+              <i data-lucide="mail" class="w-4 h-4 text-electric-indigo"></i>
+              Send Direct Email Inquiry
+            </a>
+            
+            <a href="tel:+8801708761298" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-mono text-xs bg-surface-card hover:bg-white/10 text-slate-200 border border-white/10 transition-all">
+              <i data-lucide="phone" class="w-4 h-4 text-electric-emerald"></i>
+              +880 1708-761298
+            </a>
+          </div>
+
+          <div class="pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-slate-400">
+            <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-500"></i> Jalalabad Cantonment, Sylhet, BD</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-slate-500"></i> UTC+6 (Flexible for US/EU Overlap)</span>
+            <a href="https://armyibaspecialist.info" target="_blank" rel="noopener noreferrer" class="text-electric-cyan hover:underline flex items-center gap-1">armyibaspecialist.info <i data-lucide="external-link" class="w-3 h-3"></i></a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="max-w-7xl mx-auto px-4 sm:px-8 py-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-slate-500 gap-4">
+    <div>
+      © 2026 Rizum Khan. All rights reserved.
+    </div>
+    <div class="flex items-center gap-6">
+      <a href="https://www.linkedin.com/in/rizumkhan" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition-colors">LinkedIn</a>
+      <a href="mailto:admin@armyibaspecialist.info" class="hover:text-slate-300 transition-colors">Email</a>
+      <a href="#" class="hover:text-slate-300 transition-colors">Back to Top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Scripts: Filter, Simulator, Mobile Menu & Toast -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+      });
+    });
+
+    // Copy to Clipboard with Toast Notification
+    function copyToClipboard(text, message) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(message);
+      }).catch(err => {
+        showToast("Address copied: " + text);
+      });
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toast-message');
+      toastMessage.innerText = message;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3200);
+    }
+
+    // Filterable Projects Functionality
+    const filterButtons = document.querySelectorAll('#filter-tabs button');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Active class update
+        filterButtons.forEach(b => {
+          b.classList.remove('active', 'bg-electric-indigo', 'text-white', 'border-electric-indigo');
+          b.classList.add('bg-surface-card', 'text-slate-300', 'border-white/10');
+        });
+        btn.classList.add('active', 'bg-electric-indigo', 'text-white', 'border-electric-indigo');
+        btn.classList.remove('bg-surface-card', 'text-slate-300', 'border-white/10');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        projectItems.forEach(item => {
+          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // BD Playbook Matrix Simulator Data
+    const playbookData = [
+      {
+        bottleneck: "High Manual Ops & Repetitive Staff Churn",
+        diagnosis: "Silos between marketing, inventory tracking, and CRM ingestion cause lead leakages and bloated headcount expenses.",
+        aiArchitecture: "Deploy asynchronous n8n multi-agent webhooks with Claude 3.5 triage layer for 24/7 autonomous qualification and order routing.",
+        bdImpact: "90% reduction in lead turnaround time, zero added headcount overhead, predictable operational throughput."
+      },
+      {
+        bottleneck: "Sub-Optimal Unit Economics & Margin Leakage",
+        diagnosis: "Fixed markups fail to account for fluctuating 3PL shipping logistics, return liability reserves, and supplier price changes.",
+        aiArchitecture: "Dynamic pricing mathematical engine enforcing a strict algorithmic 28% margin floor with automated Lalamove API distance routing.",
+        bdImpact: "Guaranteed profitability on every re-commerce transaction with zero unhedged gross margin variance."
+      },
+      {
+        bottleneck: "Stagnant B2B Lead Conversion & Generic Outreach",
+        diagnosis: "Cold lead funnels lack customized value demonstration, resulting in <2% reply rates and low qualification confidence.",
+        aiArchitecture: "Multi-Model prompt engineering pipeline (AIS Prompt Master framework) generating hyper-personalized company audit teardowns.",
+        bdImpact: "4.8x increase in meeting book rates, pre-validated customer pain points before the first discovery call."
+      }
+    ];
+
+    function renderPlaybook(index) {
+      const data = playbookData[index];
+      const container = document.getElementById('playbook-output');
+      container.innerHTML = `
+        <div class="space-y-2">
+          <div class="font-mono text-xs text-electric-cyan flex items-center gap-1.5">
+            <i data-lucide="alert-circle" class="w-4 h-4"></i> 01. OPERATIONAL DIAGNOSIS
+          </div>
+          <p class="text-slate-300 text-xs sm:text-sm font-sans leading-relaxed">${data.diagnosis}</p>
+        </div>
+        <div class="space-y-2 border-t lg:border-t-0 lg:border-l border-white/10 lg:pl-6 pt-4 lg:pt-0">
+          <div class="font-mono text-xs text-electric-indigo flex items-center gap-1.5">
+            <i data-lucide="cpu" class="w-4 h-4"></i> 02. APPLIED AI ARCHITECTURE
+          </div>
+          <p class="text-slate-300 text-xs sm:text-sm font-sans leading-relaxed">${data.aiArchitecture}</p>
+        </div>
+        <div class="space-y-2 border-t lg:border-t-0 lg:border-l border-white/10 lg:pl-6 pt-4 lg:pt-0">
+          <div class="font-mono text-xs text-electric-emerald flex items-center gap-1.5">
+            <i data-lucide="trending-up" class="w-4 h-4"></i> 03. QUANTIFIED BD IMPACT
+          </div>
+          <p class="text-slate-300 text-xs sm:text-sm font-sans leading-relaxed">${data.bdImpact}</p>
+        </div>
+      `;
+      lucide.createIcons();
+    }
+
+    function selectPlaybook(index) {
+      const buttons = document.querySelectorAll('.playbook-tab-btn');
+      buttons.forEach((btn, i) => {
+        if (i === index) {
+          btn.classList.add('active', 'bg-electric-indigo/20', 'border-electric-indigo', 'text-white');
+          btn.classList.remove('bg-black/40', 'border-white/10', 'text-slate-300');
+        } else {
+          btn.classList.remove('active', 'bg-electric-indigo/20', 'border-electric-indigo', 'text-white');
+          btn.classList.add('bg-black/40', 'border-white/10', 'text-slate-300');
+        }
+      });
+      renderPlaybook(index);
+    }
+
+    // Initial render for simulator
+    renderPlaybook(0);
+  </script>
+</body>
+</html>
